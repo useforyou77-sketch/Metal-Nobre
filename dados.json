@@ -1,0 +1,119 @@
+{
+ "loja": {
+  "whatsapp": "556284307480"
+ },
+ "categorias": [
+  "Colar",
+  "Pulseira",
+  "Brinco",
+  "Anel",
+  "Aliança"
+ ],
+ "pecas": [
+  {
+   "id": "p01",
+   "nome": "Corrente com Placa Diagonal",
+   "cat": "Colar",
+   "img": "fotos/peca-01.jpg",
+   "pos": "50% 60%"
+  },
+  {
+   "id": "p02",
+   "nome": "Pulseira Elos Retangulares",
+   "cat": "Pulseira",
+   "img": "fotos/peca-02.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p03",
+   "nome": "Pulseira Coração Cravejado",
+   "cat": "Pulseira",
+   "img": "fotos/peca-03.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p04",
+   "nome": "Pulseira Dupla com Coração",
+   "cat": "Pulseira",
+   "img": "fotos/peca-04.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p05",
+   "nome": "Pulseira Grumet",
+   "cat": "Pulseira",
+   "img": "fotos/peca-05.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p06",
+   "nome": "Brinco Trio de Corações",
+   "cat": "Brinco",
+   "img": "fotos/peca-06.jpg",
+   "pos": "60% 60%"
+  },
+  {
+   "id": "p07",
+   "nome": "Par de Alianças",
+   "cat": "Aliança",
+   "img": "fotos/peca-07.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p08",
+   "nome": "Solitário e Aliança",
+   "cat": "Anel",
+   "img": "fotos/peca-08.jpg",
+   "pos": "40% 55%"
+  },
+  {
+   "id": "p09",
+   "nome": "Corrente com Crucifixo",
+   "cat": "Colar",
+   "img": "fotos/peca-09.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p10",
+   "nome": "Pulseira Coração Vazado",
+   "cat": "Pulseira",
+   "img": "fotos/peca-10.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p11",
+   "nome": "Anel Cravejado",
+   "cat": "Anel",
+   "img": "fotos/peca-11.jpg",
+   "pos": "35% 50%"
+  },
+  {
+   "id": "p12",
+   "nome": "Anel Três Aros Bicolor",
+   "cat": "Anel",
+   "img": "fotos/peca-12.jpg",
+   "pos": "40% 50%"
+  },
+  {
+   "id": "p13",
+   "nome": "Corrente Grumet com Cavalo",
+   "cat": "Colar",
+   "img": "fotos/peca-13.jpg",
+   "pos": ""
+  },
+  {
+   "id": "p14",
+   "nome": "Brincos Rendados Coração e Gota",
+   "cat": "Brinco",
+   "img": "fotos/peca-14.jpg",
+   "pos": "55% 55%"
+  },
+  {
+   "id": "p15",
+   "nome": "Brincos Ponto de Luz e Argola",
+   "cat": "Brinco",
+   "img": "fotos/peca-15.jpg",
+   "pos": "55% 60%"
+  }
+ ]
+}
