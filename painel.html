@@ -170,6 +170,8 @@ async function api(rota, corpoReq) {
 var ERROS = {
   conflito: 'O conteúdo mudou desde que você abriu a Área da loja. Atualize a página e faça a mudança de novo.',
   token: 'A Área da loja não tem permissão para gravar no GitHub. Confira o GITHUB_TOKEN na Vercel.',
+  token_invalido: 'A senha está certa, mas o GITHUB_TOKEN da Vercel não é válido. Gere um token novo, cole na Vercel e faça Redeploy.',
+  token_sem_repo: 'A senha está certa, mas o GITHUB_TOKEN não tem acesso ao repositório Metal-Nobre. No token, marque o Metal-Nobre e a permissão Contents em Read and write.',
   github: 'O GitHub não respondeu agora. Tente de novo em instantes.',
   grande: 'A foto ficou grande demais. Tente outra foto.'
 };
@@ -199,8 +201,14 @@ async function entrar(e) {
   var usuario = $('lgUser').value.trim(), senha = $('lgSenha').value;
   if (!usuario || !senha) return erro('Preencha usuário e senha.');
   $('lgOk').disabled = true; $('lgMsg').className = ''; $('lgMsg').textContent = 'Entrando…';
-  try { await api('login', { usuario: usuario, senha: senha }); await abrir(); }
-  catch (j) { erro(j.erro === 'senha' ? 'Usuário ou senha incorretos.' : j.erro === 'config' ? 'A Área da loja ainda não foi configurada na Vercel.' : 'Não deu para entrar agora. Tente de novo.'); }
+  try { await api('login', { usuario: usuario, senha: senha }); }
+  catch (j) {
+    erro(j.erro === 'senha' ? 'Usuário ou senha incorretos.' : j.erro === 'config' ? 'A Área da loja ainda não foi configurada na Vercel.' : 'Não deu para entrar agora (erro ' + (j.status || 'de conexão') + '). Tente de novo.');
+    var b0 = $('lgOk'); if (b0) b0.disabled = false; return;
+  }
+  // a senha está certa; agora o painel lê as peças no GitHub
+  try { await abrir(); }
+  catch (j) { erro(ERROS[j.erro] || 'A senha está certa, mas não deu para ler as peças no GitHub (erro ' + (j.status || 'de conexão') + ').'); }
   finally { var b = $('lgOk'); if (b) b.disabled = false; }
 }
 async function abrir() {

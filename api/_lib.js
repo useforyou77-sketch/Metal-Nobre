@@ -76,7 +76,8 @@ async function gravarArquivo(caminho, base64, mensagem, sha) {
 function erroGithub(res, err) {
   const s = err && err.status;
   if (s === 409 || s === 422) return res.status(409).json({ erro: "conflito" });
-  if (s === 401 || s === 403 || s === 404) return res.status(502).json({ erro: "token" });
+  if (s === 401) return res.status(502).json({ erro: "token_invalido" });
+  if (s === 403 || s === 404) return res.status(502).json({ erro: "token_sem_repo" });
   return res.status(502).json({ erro: "github" });
 }
 
